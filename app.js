@@ -35,10 +35,12 @@
     btnExport: document.getElementById('btn-export'),
     btnImport: document.getElementById('btn-import'),
     btnReset: document.getElementById('btn-reset'),
+    btnHome: document.getElementById('btn-home'),
     fileImport: document.getElementById('file-import')
   };
 
   var ui = {
+    selectedBig: '',
     selectedSub: '',
     openEp: null,
     search: '',
@@ -197,8 +199,19 @@
   function isGroupOpen(bigId) {
     if (ui.search.trim()) return true;
     if (Object.prototype.hasOwnProperty.call(ui.openGroups, bigId)) return ui.openGroups[bigId];
+    if (ui.selectedBig === bigId) return true;
     var active = subIndex.get(ui.selectedSub);
     return Boolean(active && active.big.id === bigId);
+  }
+
+  function bigEpisodes(big) {
+    return (big.subSeries || []).reduce(function (list, sub) {
+      return list.concat(sub.episodes || []);
+    }, []);
+  }
+
+  function shotClass(stats) {
+    return stats.total && stats.shots === stats.total ? 'full' : (stats.shots > 0 ? 'part' : '');
   }
 
   function updateSearchHint(query, subCount, epCount) {
@@ -237,12 +250,11 @@
       if (rows.length === 0) return;
 
       var open = isGroupOpen(big.id);
-      var bigStats = computeStats((big.subSeries || []).reduce(function (list, sub) {
-        return list.concat(sub.episodes || []);
-      }, []));
+      var bigStats = computeStats(bigEpisodes(big));
+      var seriesActive = ui.selectedBig === big.id && !ui.selectedSub;
 
       html += '<div class="tree-group ' + (open ? 'open' : '') + '" data-big="' + esc(big.id) + '">' +
-        '<button class="tree-group-head" type="button" data-group="' + esc(big.id) + '" aria-expanded="' + open + '">' +
+        '<button class="tree-group-head' + (seriesActive ? ' active' : '') + '" type="button" data-group="' + esc(big.id) + '" aria-expanded="' + open + '"' + (seriesActive ? ' aria-current="true"' : '') + '>' +
           '<span class="chev">›</span>' +
           '<span class="dot" style="background:' + esc(big.color || '#e85d3f') + '"></span>' +
           '<span class="tree-name">' + esc(big.name) + '</span>' +
@@ -252,11 +264,10 @@
         '<div class="tree-children">' +
           rows.map(function (sub) {
             var stats = computeStats(sub.episodes || []);
-            var shotClass = stats.total && stats.shots === stats.total ? 'full' : (stats.shots > 0 ? 'part' : '');
             return '<button class="tree-item ' + (sub.id === ui.selectedSub ? 'active' : '') + '" type="button" data-sub="' + esc(sub.id) + '">' +
               '<span class="tree-name">' + esc(sub.name) + '</span>' +
               '<span class="weight ' + weightClass(subWeight(sub)) + '">' + esc(subWeight(sub)) + '</span>' +
-              '<span class="shot-dot ' + shotClass + '" title="已拍 ' + stats.shots + ' / 共 ' + stats.total + ' 集"></span>' +
+              '<span class="shot-dot ' + shotClass(stats) + '" title="已拍 ' + stats.shots + ' / 共 ' + stats.total + ' 集"></span>' +
               '<span class="tree-count" title="已发布 ' + stats.published + ' / 共 ' + stats.total + ' 集；已拍 ' + stats.shots + ' 集">' + stats.published + '/' + stats.total + '</span>' +
             '</button>';
           }).join('') +
@@ -276,9 +287,140 @@
   }
 
   function renderDetail() {
+    if (ui.selectedSub) {
+      renderSubDetail();
+      return;
+    }
+    if (ui.selectedBig) {
+      renderSeriesOverview();
+      return;
+    }
+    renderHome();
+  }
+
+  function renderHome() {
+    var totalSubs = library.reduce(function (sum, big) {
+      return sum + (big.subSeries || []).length;
+    }, 0);
+    var stats = computeStats(allEpisodes.map(function (item) { return item.ep; }));
+
+    document.documentElement.style.setProperty('--series-color', '#e2593d');
+
+    els.content.innerHTML =
+      '<section class="panel-head home-hero">' +
+        '<div class="breadcrumb">系列库 <span class="sep">/</span> 内容地图</div>' +
+        '<h2>今天拍什么？</h2>' +
+        '<p class="tagline">先点大系列，再点子系列，最后看每一集的文案、拍摄建议和五步进度。</p>' +
+        '<div class="head-meta">' +
+          '<span class="meta-item">' + library.length + ' 大系列</span>' +
+          '<span class="meta-item">' + totalSubs + ' 个子系列</span>' +
+          '<span class="meta-item">' + stats.total + ' 集</span>' +
+          '<span class="meta-item">已拍 ' + stats.shots + ' 集</span>' +
+          '<span class="meta-item">已发布 ' + stats.published + ' 集</span>' +
+          '<div class="progress-wrap">' +
+            '<div class="progress-label"><span>总进度</span><b>' + stats.pct + '%</b></div>' +
+            '<div class="progress-bar"><div class="progress-fill" style="width:' + stats.pct + '%"></div></div>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+      '<div class="detail-toolbar">' +
+        '<div><h3>全部系列</h3><span class="sub">点卡片进入子系列</span></div>' +
+        '<button class="btn-small" id="btn-expand-groups" type="button">展开左侧目录</button>' +
+      '</div>' +
+      '<div class="series-grid">' + library.map(renderSeriesTile).join('') + '</div>';
+  }
+
+  function renderSeriesTile(big) {
+    var subs = big.subSeries || [];
+    var stats = computeStats(bigEpisodes(big));
+    var chips = subs.slice(0, 4).map(function (sub) {
+      return '<span class="tile-chip">' + esc(sub.name) + '</span>';
+    }).join('');
+    if (subs.length > 4) {
+      chips += '<span class="tile-chip">+' + (subs.length - 4) + '</span>';
+    }
+
+    return '<a class="series-tile" href="#series/' + esc(big.id) + '" data-big-card="' + esc(big.id) + '" style="--tile-color:' + esc(big.color || '#e85d3f') + '">' +
+      '<div class="tile-top">' +
+        '<span class="dot" style="background:' + esc(big.color || '#e85d3f') + '"></span>' +
+        '<h3>' + esc(big.name) + '</h3>' +
+        '<span class="weight ' + weightClass(bigWeight(big)) + '">' + esc(bigWeight(big)) + '</span>' +
+      '</div>' +
+      '<p class="tile-tagline">' + esc(big.tagline || '') + '</p>' +
+      '<p class="tile-desc">' + esc(big.description || '') + '</p>' +
+      '<div class="tile-meta">' +
+        '<span>' + subs.length + ' 个子系列</span>' +
+        '<span>' + stats.total + ' 集</span>' +
+        '<span>已拍 ' + stats.shots + '</span>' +
+        '<span>已发布 ' + stats.published + '</span>' +
+      '</div>' +
+      '<div class="tile-progress"><span style="width:' + stats.pct + '%"></span></div>' +
+      (chips ? '<div class="tile-chips">' + chips + '</div>' : '') +
+      '<span class="tile-cta">进入系列 →</span>' +
+    '</a>';
+  }
+
+  function renderSeriesOverview() {
+    var big = bigIndex.get(ui.selectedBig);
+    if (!big) {
+      renderHome();
+      return;
+    }
+
+    var subs = big.subSeries || [];
+    var stats = computeStats(bigEpisodes(big));
+
+    document.documentElement.style.setProperty('--series-color', big.color || '#e85d3f');
+
+    els.content.innerHTML =
+      '<section class="panel-head">' +
+        '<div class="breadcrumb"><a class="crumb-link" href="#home" data-home>内容地图</a> <span class="sep">/</span> ' + esc(big.name) + '</div>' +
+        '<h2>' + esc(big.name) + '</h2>' +
+        '<p class="tagline">' + esc(big.tagline || '') + '</p>' +
+        '<div class="head-meta">' +
+          '<label class="control">大系列权重 <select data-big-weight="' + esc(big.id) + '">' + weightOptions(bigWeight(big)) + '</select></label>' +
+          '<span class="meta-item">' + subs.length + ' 个子系列</span>' +
+          '<span class="meta-item">' + stats.total + ' 集</span>' +
+          '<span class="meta-item">已拍 ' + stats.shots + ' 集</span>' +
+          '<span class="meta-item">已发布 ' + stats.published + ' 集</span>' +
+          '<div class="progress-wrap">' +
+            '<div class="progress-label"><span>系列进度</span><b>' + stats.pct + '%</b></div>' +
+            '<div class="progress-bar"><div class="progress-fill" style="width:' + stats.pct + '%"></div></div>' +
+          '</div>' +
+        '</div>' +
+      '</section>' +
+      '<div class="detail-toolbar">' +
+        '<div><h3>子系列</h3><span class="sub">共 ' + subs.length + ' 个 · ' + stats.total + ' 集</span></div>' +
+        '<a class="btn-small" href="#home" data-home>返回内容地图</a>' +
+      '</div>' +
+      (subs.length
+        ? '<div class="sub-grid">' + subs.map(renderSubTile).join('') + '</div>'
+        : '<div class="empty"><h2>还没有子系列</h2><p>在对应 data.js 里补充 subSeries 即可。</p></div>');
+  }
+
+  function renderSubTile(sub) {
+    var stats = computeStats(sub.episodes || []);
+    return '<a class="sub-tile" href="#' + esc(sub.id) + '" data-sub-card="' + esc(sub.id) + '">' +
+      '<div class="sub-top">' +
+        '<span class="shot-dot ' + shotClass(stats) + '" title="已拍 ' + stats.shots + ' / 共 ' + stats.total + ' 集"></span>' +
+        '<h4>' + esc(sub.name) + '</h4>' +
+        '<span class="weight ' + weightClass(subWeight(sub)) + '">' + esc(subWeight(sub)) + '</span>' +
+      '</div>' +
+      '<p class="tile-desc">' + esc(sub.summary || '') + '</p>' +
+      '<div class="tile-meta">' +
+        '<span>' + stats.total + ' 集</span>' +
+        '<span>已发布 ' + stats.published + '/' + stats.total + '</span>' +
+        '<span>已拍 ' + stats.shots + '</span>' +
+      '</div>' +
+      '<div class="tile-progress"><span style="width:' + stats.pct + '%"></span></div>' +
+      '<span class="tile-cta">进入子系列 →</span>' +
+    '</a>';
+  }
+
+  function renderSubDetail() {
     var found = subIndex.get(ui.selectedSub);
     if (!found) {
-      els.content.innerHTML = '<div class="empty"><h2>还没有选择系列</h2><p>从左侧目录点开一个子系列，就能看到选题、文案和拍摄建议。</p></div>';
+      renderHome();
       return;
     }
 
@@ -291,7 +433,7 @@
 
     els.content.innerHTML =
       '<section class="panel-head">' +
-        '<div class="breadcrumb">' + esc(big.name) + ' <span class="sep">/</span> ' + esc(sub.name) + '</div>' +
+        '<div class="breadcrumb"><a class="crumb-link" href="#home" data-home>内容地图</a> <span class="sep">/</span> <a class="crumb-link" href="#series/' + esc(big.id) + '" data-big-card="' + esc(big.id) + '">' + esc(big.name) + '</a> <span class="sep">/</span> ' + esc(sub.name) + '</div>' +
         '<h2>' + esc(sub.name) + '</h2>' +
         '<p class="tagline">' + esc(sub.summary || big.tagline || '') + '</p>' +
         '<div class="head-meta">' +
@@ -359,6 +501,12 @@
     '</article>';
   }
 
+  function scrollContentOnMobile() {
+    if (window.innerWidth <= 980) {
+      els.content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
   function selectSub(subId, epId) {
     var found = subIndex.get(subId);
     if (!found) return;
@@ -366,6 +514,7 @@
     var episodes = found.sub.episodes || [];
     var nextEp = epId !== undefined ? epId : (episodes[0] ? episodes[0].id : null);
 
+    ui.selectedBig = found.big.id;
     ui.selectedSub = subId;
     ui.openGroups[found.big.id] = true;
     ui.openEp = episodes.some(function (ep) { return ep.id === nextEp; }) ? nextEp : (episodes[0] ? episodes[0].id : null);
@@ -373,10 +522,33 @@
     renderTree();
     renderDetail();
     writeHash();
+    scrollContentOnMobile();
+  }
 
-    if (window.innerWidth <= 980) {
-      els.content.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  function selectBig(bigId) {
+    var big = bigIndex.get(bigId);
+    if (!big) return;
+
+    ui.selectedBig = bigId;
+    ui.selectedSub = '';
+    ui.openEp = null;
+    ui.openGroups[bigId] = true;
+
+    renderTree();
+    renderDetail();
+    writeHash();
+    scrollContentOnMobile();
+  }
+
+  function goHome() {
+    ui.selectedBig = '';
+    ui.selectedSub = '';
+    ui.openEp = null;
+
+    renderTree();
+    renderDetail();
+    writeHash();
+    scrollContentOnMobile();
   }
 
   function toggleEpisode(epId) {
@@ -546,8 +718,12 @@
   }
 
   function writeHash() {
-    if (!ui.selectedSub) return;
-    var hash = '#' + ui.selectedSub + (ui.openEp ? '/' + ui.openEp : '');
+    var hash = '#home';
+    if (ui.selectedSub) {
+      hash = '#' + ui.selectedSub + (ui.openEp ? '/' + ui.openEp : '');
+    } else if (ui.selectedBig) {
+      hash = '#series/' + ui.selectedBig;
+    }
     try {
       history.replaceState(null, '', hash);
     } catch (error) {
@@ -562,24 +738,36 @@
     } catch (error) {
       raw = '';
     }
-    var parts = raw.split('/');
-    var subId = parts[0] || '';
-    var epId = parts[1] || '';
-    var found = subIndex.get(subId);
 
-    if (found) {
-      var episodes = found.sub.episodes || [];
-      ui.selectedSub = subId;
-      ui.openEp = episodes.some(function (ep) { return ep.id === epId; }) ? epId : (episodes[0] ? episodes[0].id : null);
-    } else {
-      var fallbackId = subIndex.has('game-platform') ? 'game-platform' : (allEpisodes[0] ? allEpisodes[0].sub.id : '');
-      var fallback = subIndex.get(fallbackId);
-      ui.selectedSub = fallbackId;
-      ui.openEp = fallback && fallback.sub.episodes[0] ? fallback.sub.episodes[0].id : null;
+    if (raw.indexOf('series/') === 0) {
+      var bigId = raw.slice(7);
+      if (bigIndex.has(bigId)) {
+        ui.selectedBig = bigId;
+        ui.selectedSub = '';
+        ui.openEp = null;
+        ui.openGroups[bigId] = true;
+        return;
+      }
     }
 
-    var active = subIndex.get(ui.selectedSub);
-    if (active) ui.openGroups[active.big.id] = true;
+    if (raw && raw !== 'home') {
+      var parts = raw.split('/');
+      var subId = parts[0] || '';
+      var epId = parts[1] || '';
+      var found = subIndex.get(subId);
+      if (found) {
+        var episodes = found.sub.episodes || [];
+        ui.selectedBig = found.big.id;
+        ui.selectedSub = subId;
+        ui.openEp = episodes.some(function (ep) { return ep.id === epId; }) ? epId : (episodes[0] ? episodes[0].id : null);
+        ui.openGroups[found.big.id] = true;
+        return;
+      }
+    }
+
+    ui.selectedBig = '';
+    ui.selectedSub = '';
+    ui.openEp = null;
   }
 
   function buildExport() {
@@ -670,8 +858,18 @@
     var group = event.target.closest('.tree-group-head');
     if (group) {
       var bigId = group.dataset.group;
-      ui.openGroups[bigId] = !isGroupOpen(bigId);
+      var onSeriesOverview = ui.selectedBig === bigId && !ui.selectedSub;
+      var wasOpen = isGroupOpen(bigId);
+
+      ui.selectedBig = bigId;
+      ui.selectedSub = '';
+      ui.openEp = null;
+      ui.openGroups[bigId] = onSeriesOverview ? !wasOpen : true;
+
       renderTree();
+      renderDetail();
+      writeHash();
+      scrollContentOnMobile();
       return;
     }
     var item = event.target.closest('.tree-item');
@@ -679,6 +877,36 @@
   });
 
   els.content.addEventListener('click', function (event) {
+    var homeLink = event.target.closest('[data-home]');
+    if (homeLink) {
+      event.preventDefault();
+      goHome();
+      return;
+    }
+
+    var bigCard = event.target.closest('[data-big-card]');
+    if (bigCard) {
+      event.preventDefault();
+      selectBig(bigCard.dataset.bigCard);
+      return;
+    }
+
+    var subCard = event.target.closest('[data-sub-card]');
+    if (subCard) {
+      event.preventDefault();
+      selectSub(subCard.dataset.subCard);
+      return;
+    }
+
+    if (event.target.closest('#btn-expand-groups')) {
+      library.forEach(function (big) {
+        ui.openGroups[big.id] = true;
+      });
+      renderTree();
+      toast('左侧目录已全部展开');
+      return;
+    }
+
     var expand = event.target.closest('[data-expand]');
     if (expand) {
       toggleEpisode(expand.dataset.expand);
@@ -742,6 +970,7 @@
   els.btnExport.addEventListener('click', exportState);
   els.btnImport.addEventListener('click', function () { els.fileImport.click(); });
   els.btnReset.addEventListener('click', resetState);
+  if (els.btnHome) els.btnHome.addEventListener('click', goHome);
 
   els.fileImport.addEventListener('change', function () {
     var file = els.fileImport.files && els.fileImport.files[0];
