@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>系列库 · 我和程序员爸爸</title>
+<meta name="description" content="亲子短视频系列库：按系列展开选题、第一人称文案与拍摄建议，并记录拍摄进度。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">
+    <span class="brand-mark">系</span>
+    <span class="brand-text">
+      <strong>系列库</strong>
+      <small>我和程序员爸爸 · 内容地图</small>
+    </span>
+  </a>
+
+  <div class="topstats">
+    <div class="stat"><b id="stat-shot">0</b><span>已拍素材</span></div>
+    <div class="stat"><b id="stat-published">0</b><span>已发布</span></div>
+    <div class="stat"><b id="stat-progress">0%</b><span>总进度</span></div>
+  </div>
+
+  <div class="topactions">
+    <button class="btn" id="btn-export" type="button">导出备份</button>
+    <button class="btn btn-ghost" id="btn-import" type="button">导入备份</button>
+    <button class="btn btn-ghost" id="btn-reset" type="button">重置</button>
+    <input type="file" id="file-import" accept="application/json,.json" hidden>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <a class="handbook-link" href="guide.html">
+      <span class="handbook-kicker">制作手册</span>
+      <strong>脚本模板 · 拍摄 · 剪辑 · 发布 · 复盘</strong>
+      <span class="handbook-arrow">→</span>
+    </a>
+
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="搜选题、文案、关键词…" autocomplete="off" aria-label="搜索系列和选题">
+      <button class="search-clear" id="search-clear" type="button" aria-label="清空搜索" hidden>×</button>
+    </div>
+    <p class="search-hint" id="search-hint">正在加载…</p>
+    <nav class="tree" id="tree" aria-label="系列目录"></nav>
+
+    <div class="legend">
+      <span class="legend-title">权重</span>
+      <span class="weight weight-s">S</span><span>主推</span>
+      <span class="weight weight-a">A</span><span>重点</span>
+      <span class="weight weight-b">B</span><span>常规</span>
+      <span class="weight weight-c">C</span><span>备用</span>
+    </div>
+    <p class="save-note">
+      勾选某一步会自动补齐前面的步骤。<br>
+      0/13 = 已发布 / 总集数；绿点 = 已拍齐，黄点 = 拍了一部分。<br>
+      数据只存在本机浏览器，换设备前先导出备份。
+    </p>
+  </aside>
+
+  <main class="content" id="content">
+    <div class="empty">
+      <h2>正在加载系列库…</h2>
+      <p>如果没有内容，请确认 data.js 文件与 index.html 在同一目录。</p>
+    </div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="游戏闯关/data.js"></script>
+<script src="运动日常/data.js"></script>
+<script src="学习复习/data.js"></script>
+<script src="AI工具/data.js"></script>
+<script src="内容创作/data.js"></script>
+<script src="AI技能课/data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

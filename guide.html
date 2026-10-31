@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制作手册 · 我和程序员爸爸</title>
+<meta name="description" content="从选题、脚本、拍摄、旁白剪辑到发布复盘的一站式制作手册。">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="guide.css">
+</head>
+<body class="guide-page">
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">册</span>
+    <span class="brand-text">
+      <strong>制作手册</strong>
+      <small>我和程序员爸爸 · 从选题到复盘</small>
+    </span>
+  </a>
+
+  <div class="topstats">
+    <div class="stat"><b>6</b><span>大系列</span></div>
+    <div class="stat"><b>37</b><span>选题</span></div>
+    <div class="stat"><b>103</b><span>分钟原片</span></div>
+  </div>
+
+  <div class="topactions">
+    <a class="btn" href="index.html">← 系列库</a>
+    <button class="btn btn-ghost" id="btn-print" type="button">打印 / 存 PDF</button>
+  </div>
+</header>
+
+<div class="layout guide-layout">
+  <aside class="sidebar guide-sidebar">
+    <p class="guide-nav-title">目录</p>
+    <nav class="guide-nav" aria-label="手册目录">
+      <a href="#overview">总览与工作流</a>
+      <a href="#roadmap">路线图与排序</a>
+      <a href="#series">系列设定</a>
+      <a href="#script">写脚本</a>
+      <a href="#shoot">拍摄</a>
+      <a href="#edit">旁白剪辑</a>
+      <a href="#publish">发布</a>
+      <a href="#retro">复盘</a>
+      <a href="#titles">标题与金句</a>
+      <a href="#library">系列库用法</a>
+    </nav>
+    <a class="handbook-link guide-back" href="index.html">
+      <span class="handbook-kicker">日常入口</span>
+      <strong>返回系列库，看选题和进度</strong>
+      <span class="handbook-arrow">→</span>
+    </a>
+    <p class="save-note">
+      原 00–06 文件夹已合并到本页。<br>
+      勾选仅用于当场对照，拍摄进度请回系列库标记。
+    </p>
+  </aside>
+
+  <main class="content guide-content">
+    <section class="panel-head guide-hero" id="top">
+      <div class="breadcrumb">制作手册 <span class="sep">/</span> 从想法到发布</div>
+      <h2>把日常拍成 60 秒</h2>
+      <p class="tagline">系列库告诉你「拍什么」，这本手册告诉你「怎么拍」。脚本、拍摄、剪辑、发布、复盘，全在这一页。</p>
+      <div class="head-meta">
+        <span class="meta-item">13 集原片</span>
+        <span class="meta-item">103 分钟素材</span>
+        <span class="meta-item">成片 60–120 秒</span>
+        <span class="meta-item">竖版 1080×1920</span>
+      </div>
+    </section>
+
+    <section class="guide-section" id="overview">
+      <h2>总览与工作流</h2>
+      <p class="guide-lede">一个五年级孩子和一个 30 多岁的程序员爸爸，用 AI 做游戏、学知识、拍视频，顺便翻车。统一风格：第一人称、幽默、简短、不说教。</p>
+
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h3>系列库</h3>
+          <p>按大系列 → 子系列 → 单集展开，看文案、备选标题、拍摄建议和五步进度。</p>
+          <p class="guide-note">回答：拍什么？现在到哪一步了？</p>
+        </div>
+        <div class="guide-card">
+          <h3>制作手册</h3>
+          <p>脚本模板、路线图、拍摄清单、旁白剪辑法、发布和复盘流程。</p>
+          <p class="guide-note">回答：具体怎么拍？怎么剪？怎么发？</p>
+        </div>
+      </div>
+
+      <h3>一期视频的 8 步</h3>
+      <div class="step-grid">
+        <div class="step-card"><b>1 选题</b><span>系列库里挑一个子系列，确认清单状态。</span></div>
+        <div class="step-card"><b>2 脚本</b><span>有原片用旁白重剪模板，没拍用分镜模板。</span></div>
+        <div class="step-card"><b>3 拍摄</b><span>先拍反应，再补过程；提前 10 秒开录。</span></div>
+        <div class="step-card"><b>4 剪辑</b><span>先录旁白，再铺 6–8 段画面，每段 3–6 秒。</span></div>
+        <div class="step-card"><b>5 文案</b><span>标题、三版简介、标签、封面和置顶评论。</span></div>
+        <div class="step-card"><b>6 发布</b><span>多平台错开 1–2 小时，先定平台再定时长。</span></div>
+        <div class="step-card"><b>7 复盘</b><span>24 小时后填数据、三个问题、一句话结论。</span></div>
+        <div class="step-card"><b>8 回填</b><span>把结论和新选题写回系列库。</span></div>
+      </div>
+
+      <div class="callout">
+        <strong>成片格式（重要）</strong>
+        <p>A 系列 13 集已经录完，原片在 <code>D:\Study\课本\视频录制</code>，合计约 103 分钟。<strong>不要直接发原片</strong>：小学生第一人称旁白占约 70%，原片只取 6–8 段、每段 3–6 秒，成片 60–120 秒。</p>
+      </div>
+
+      <h3>命名规范</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>类型</th><th>格式</th><th>示例</th></tr></thead>
+          <tbody>
+            <tr><td>脚本</td><td><code>编号-标题.md</code></td><td><code>A01-闯关小游戏介绍.md</code></td></tr>
+            <tr><td>素材</td><td><code>编号_日期_机位_内容.mp4</code></td><td><code>A01_20261101_A机位_开场.mp4</code></td></tr>
+            <tr><td>录屏</td><td><code>编号_日期_录屏_内容.mp4</code></td><td><code>A01_20261101_录屏_第一关.mp4</code></td></tr>
+            <tr><td>成片</td><td><code>编号-标题_版本_v1.mp4</code></td><td><code>A01-闯关小游戏介绍_竖版_v1.mp4</code></td></tr>
+            <tr><td>封面</td><td><code>编号-标题_封面.png</code></td><td><code>A01-闯关小游戏介绍_封面.png</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>状态与底线</h3>
+      <div class="flow-row">
+        <span class="flow-chip">灵感</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">策划中</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">脚本完成</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">已拍摄</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">已剪辑</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">已发布</span><span class="flow-arrow">→</span>
+        <span class="flow-chip">已复盘</span>
+      </div>
+      <p class="guide-note">不想做了就标「搁置」，别删，半年后可能又香了。日常进度以系列库五步清单为准。</p>
+
+      <div class="callout callout-warn">
+        <strong>三条底线</strong>
+        <ol>
+          <li>孩子不想拍就停，不演、不逼、不拿哭脸当素材。</li>
+          <li>隐私打码：门牌、学校、车牌、快递单、代码密钥一律不出现。</li>
+          <li>不吹牛：AI 能做到什么就说什么，技术细节标注「以实际为准」。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="guide-section" id="roadmap">
+      <h2>路线图与排序</h2>
+      <p class="guide-lede">13 集原片合计约 103 分钟，成片目标合计约 19 分钟。原片只是素材库；制作先易后难，发布按故事线。</p>
+
+      <h3>难度分级</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>等级</th><th>特征</th><th>成片时长</th><th>参考工时</th></tr></thead>
+          <tbody>
+            <tr><td><b>L1</b> 单线展示</td><td>一个操作 + 一个结果，5–7 个片段</td><td>45–60s</td><td>2–3 小时</td></tr>
+            <tr><td><b>L2</b> 过程拼接</td><td>多步骤 + 前后对比 + 字幕</td><td>60–90s</td><td>3–5 小时</td></tr>
+            <tr><td><b>L3</b> 概念讲解</td><td>需要比喻/图示，旁白密度高</td><td>60–120s</td><td>5–8 小时</td></tr>
+            <tr><td><b>L4</b> 多线叙事</td><td>父子互动 + 操作 + 结果 + 情绪线</td><td>90–120s</td><td>8–12 小时</td></tr>
+            <tr><td><b>L5</b> 产品化/连载</td><td>跨集依赖、上架、系列包装</td><td>3–8min 或连载</td><td>2 天以上</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-note">工时是参考，不是 KPI。第一次剪按上限估，熟练后会快很多。</p>
+
+      <h3>A 系列素材盘点</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>编号</th><th>标题</th><th>原片</th><th>成片</th><th>保留率</th><th>难度</th><th>制作序</th><th>发布序</th></tr></thead>
+          <tbody>
+            <tr><td>A01</td><td>闯关小游戏介绍</td><td>5:45</td><td>1:15</td><td>22%</td><td>L2</td><td>4</td><td><b>1</b></td></tr>
+            <tr><td>A02</td><td>游戏创作平台简介</td><td>5:42</td><td>1:15</td><td>22%</td><td>L1</td><td>3</td><td>2</td></tr>
+            <tr><td>A03</td><td>通过 AI 创作题目 + JSON</td><td>15:29</td><td>2:00</td><td>13%</td><td>L4</td><td>11</td><td>8</td></tr>
+            <tr><td>A04</td><td>创作游戏并试玩</td><td>4:54</td><td>1:30</td><td>31%</td><td>L2</td><td>5</td><td>3</td></tr>
+            <tr><td>A05</td><td>游戏定制化功能介绍</td><td>3:16</td><td>1:00</td><td>31%</td><td>L1</td><td>2</td><td>4</td></tr>
+            <tr><td>A06</td><td>让孩子从头自己做游戏</td><td>12:36</td><td>2:00</td><td>16%</td><td>L3</td><td>10</td><td>7</td></tr>
+            <tr><td>A07</td><td>如何设计游戏精灵形象</td><td>10:37</td><td>1:30</td><td>14%</td><td>L3</td><td>7</td><td>5</td></tr>
+            <tr><td>A08</td><td>再来设计一款游戏精灵形象</td><td>1:33</td><td>0:55</td><td>59%</td><td>L1</td><td><b>1</b></td><td>6</td></tr>
+            <tr><td>A09</td><td>什么是 SKILL</td><td>3:13</td><td>1:30</td><td>47%</td><td>L3</td><td>8</td><td>9</td></tr>
+            <tr><td>A10</td><td>安装 SKILL，读课本出题</td><td>6:56</td><td>2:00</td><td>29%</td><td>L4</td><td>12</td><td>10</td></tr>
+            <tr><td>A11</td><td>边玩游戏边讲解</td><td>13:56</td><td>2:00</td><td>14%</td><td>L4</td><td>13</td><td>11</td></tr>
+            <tr><td>A12</td><td>用 AI 分析错题</td><td>1:47</td><td>1:15</td><td>70%</td><td>L2</td><td>6</td><td>12</td></tr>
+            <tr><td>A13</td><td>题目太简单，加 2 个级别</td><td>17:42</td><td>1:15</td><td>7%</td><td>L3</td><td>9</td><td>13</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <strong>读表重点</strong>
+        <ul>
+          <li>A08、A12 原片本来就短，最适合练手。</li>
+          <li>A13 原片 17:42，成片只要 1:15，剪之前先列 6 个关键点，否则会陷在素材里。</li>
+          <li>A03、A11、A07、A06 保留率都在 14% 左右，属于重剪型，先标记再剪。</li>
+          <li>A01 是发布第一集，但不是制作第一集；先剪会拖慢进度。</li>
+        </ul>
+      </div>
+
+      <h3>制作顺序</h3>
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h4>第 1 批 · L1 单线展示</h4>
+          <ol class="guide-list">
+            <li><b>D01 引体向上</b>：30 秒，不用录屏，先建立人设。</li>
+            <li><b>A08 再来设计一款精灵</b>：原片 1:33，最短录屏，有摄像头小窗。</li>
+            <li><b>A05 游戏定制化</b>：改设置 → 看效果，天然前后对比。</li>
+            <li><b>A02 平台简介</b>：介绍型，剪掉登录和建项目即可。</li>
+          </ol>
+          <p class="guide-note">目标：验证「旁白 + 6 段片段」模板，单集控制在 3 小时内。</p>
+        </div>
+        <div class="guide-card">
+          <h4>第 2 批 · L2 过程拼接</h4>
+          <ol class="guide-list" start="4">
+            <li><b>A01 闯关小游戏介绍</b>：系列门面，钩子要最强。</li>
+            <li><b>A04 创作游戏并试玩</b>：创作 → 试玩的前后对比。</li>
+            <li><b>A12 用 AI 分析错题</b>：原片已聚焦，补旁白即可。</li>
+          </ol>
+          <p class="guide-note">目标：固定片头 2 秒、片尾提问、字幕样式，形成系列感。</p>
+        </div>
+        <div class="guide-card">
+          <h4>第 3 批 · L3 概念与长素材</h4>
+          <ol class="guide-list" start="7">
+            <li><b>A07 设计精灵形象</b>：多版迭代，只留 3 版对比。</li>
+            <li><b>A09 什么是 SKILL</b>：纯概念，需要白板/图示。</li>
+            <li><b>A13 难度升级</b>：长素材，只留「简单 → 困难 → 翻车」。</li>
+            <li><b>A06 孩子自己做游戏</b>：独立完成 + 爸爸插嘴，情绪线。</li>
+          </ol>
+          <p class="guide-note">目标：开始加简单图示和比喻，一条只讲一个概念。</p>
+        </div>
+        <div class="guide-card">
+          <h4>第 4 批 · L4 多线叙事</h4>
+          <ol class="guide-list" start="11">
+            <li><b>A03 AI 出题 + JSON</b>：JSON 用乐高/表格类比，别讲语法。</li>
+            <li><b>A10 装 SKILL 读课本出题</b>：依赖 A09，真实课本。</li>
+            <li><b>A11 边玩边讲</b>：游戏 + 画中画讲解，信息密度最高。</li>
+          </ol>
+          <p class="guide-note">目标：父子互动、操作、结果三条线并行，成片控制在 2 分钟内。</p>
+        </div>
+      </div>
+
+      <h3>发布顺序（按故事线）</h3>
+      <p class="guide-note">制作可以跳着做，发布不要跳。</p>
+      <div class="guide-grid three">
+        <div class="season-card">
+          <span class="season-tag">第 1 季</span>
+          <h4>先玩起来</h4>
+          <p>A01 介绍 → A02 平台 → A04 创作试玩 → A05 定制化</p>
+          <p class="guide-note">先知道这是什么游戏，再看怎么做，最后看还能改成什么样。</p>
+        </div>
+        <div class="season-card">
+          <span class="season-tag">第 2 季</span>
+          <h4>自己造</h4>
+          <p>A07 精灵 1 → A08 精灵 2 → A06 孩子独立做 → A03 AI 出题 + JSON</p>
+          <p class="guide-note">从设计角色，到自己做游戏，再到题目是怎么被 AI 造出来的。</p>
+        </div>
+        <div class="season-card">
+          <span class="season-tag">第 3 季</span>
+          <h4>让 AI 出题</h4>
+          <p>A09 什么是 SKILL → A10 装 SKILL 出题 → A11 边玩边讲 → A12 错题报告 → A13 难度升级</p>
+          <p class="guide-note">完整闭环：装技能 → 出题 → 做 → 分析 → 加难度。</p>
+        </div>
+      </div>
+
+      <h3>跨系列排序</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>编号</th><th>内容</th><th>难度</th><th>建议时机</th></tr></thead>
+          <tbody>
+            <tr><td>D01–D07</td><td>引体向上 / 跳绳 / 跑步 / 俯卧撑 / 羽毛球 / 游泳 / 亲子运动会</td><td>L1</td><td>随时，优先 D01</td></tr>
+            <tr><td>B09</td><td>数据排序</td><td>L1</td><td>第 1–2 批之间</td></tr>
+            <tr><td>B10</td><td>折线图</td><td>L1</td><td>第 1–2 批之间</td></tr>
+            <tr><td>C04</td><td>难度升级实验</td><td>L1</td><td>复用 A13 素材</td></tr>
+            <tr><td>B07</td><td>自己出题复习</td><td>L2</td><td>第 2 季</td></tr>
+            <tr><td>B11</td><td>聊天类视频</td><td>L2</td><td>第 2 季</td></tr>
+            <tr><td>B01</td><td>公众号</td><td>L2</td><td>每 4 集做一次合集</td></tr>
+            <tr><td>B02</td><td>视频双版本</td><td>L3</td><td>与 A 系列同步</td></tr>
+            <tr><td>B03</td><td>网页小工具</td><td>L3</td><td>第 3 批</td></tr>
+            <tr><td>B06</td><td>RPG 游戏人物</td><td>L3</td><td>第 3 批</td></tr>
+            <tr><td>B12</td><td>数字人</td><td>L3</td><td>第 4 批</td></tr>
+            <tr><td>C01</td><td>什么是 SKILL</td><td>L3</td><td>与 A09 同步</td></tr>
+            <tr><td>C02</td><td>做出题 SKILL</td><td>L3</td><td>与 A10 同步</td></tr>
+            <tr><td>C03</td><td>出题 → 做题 → 报告</td><td>L4</td><td>第 4 批，连载</td></tr>
+            <tr><td>B04</td><td>iOS 上架</td><td>L5</td><td>第 5 批</td></tr>
+            <tr><td>B05</td><td>小程序上架</td><td>L5</td><td>第 5 批</td></tr>
+            <tr><td>B08</td><td>答题游戏 App 版</td><td>L5</td><td>第 5 批</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>每批的交付标准</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>批次</th><th>必须做到</th><th>先不要做</th></tr></thead>
+          <tbody>
+            <tr><td>第 1 批</td><td>旁白清楚、6–7 段、字幕能看清</td><td>花哨转场、动画</td></tr>
+            <tr><td>第 2 批</td><td>固定片头片尾、统一字幕</td><td>复杂音效</td></tr>
+            <tr><td>第 3 批</td><td>一个图示/比喻、信息不超载</td><td>多概念混讲</td></tr>
+            <tr><td>第 4 批</td><td>情绪线完整、父子互动</td><td>超过 2 分钟</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-green">
+        <strong>先做哪几集</strong>
+        <p>先剪 <b>A08</b>（1:33，最容易），再用同一模板剪 <b>A05</b>、<b>A02</b>，然后按新格式重剪 <b>A01</b>。发布仍从 A01 开始，A08 排第 6 集。</p>
+        <p class="guide-note">另外还有 <code>9月24日.mp4</code>（62 分钟）和 <code>9月25日.mp4</code>（45 分钟）两段长录屏，适合当花絮、反应镜头和 B-roll，不建议直接剪成单集。</p>
+      </div>
+    </section>
+
+    <section class="guide-section" id="series">
+      <h2>系列设定</h2>
+      <p class="guide-lede">四个大系列各有自己的主角、节奏和判断标准。选题可以不按顺序拍，但人设和语气要统一。</p>
+
+      <div class="series-card game">
+        <div class="series-card-head"><span class="weight weight-s">A</span><h3>游戏闯关</h3></div>
+        <p><b>核心设定：</b>把课本知识拆成一关一关。数学是解谜，语文是成语，科学是实验。每过一关有积分、称号和新地图。孩子不是「被逼着学」，而是「想通关」。</p>
+        <p><b>视觉统一：</b>竖版 1080×1920；录屏居中、上下留白；片头 2 秒「我和程序员爸爸 · 第 X 关」；结尾固定一句提问。</p>
+        <h4>系列内的连续剧设计</h4>
+        <ul class="guide-list">
+          <li><b>道具连续：</b>同一只精灵、同一张地图、同一个积分榜，跨集出现。</li>
+          <li><b>人物成长：</b>爸爸从「我来教你」变成「你教教我」。</li>
+          <li><b>悬念钩子：</b>每集结尾抛一个下集问题，评论区收集答案。</li>
+          <li><b>称号系统：</b>第 1 关「新手村村民」→ 第 13 关「关卡设计师」。</li>
+        </ul>
+        <h4>拍前提醒</h4>
+        <ol class="guide-list">
+          <li>先让孩子玩一遍，抓到真实反应再开机。</li>
+          <li>录屏提前 10 秒开，别错过翻车瞬间。</li>
+          <li>每集只保留一个知识点，其余剪掉。</li>
+          <li>爸爸的「嘴硬」是最好用的喜剧点，但别演过头。</li>
+        </ol>
+      </div>
+
+      <div class="series-card ai">
+        <div class="series-card-head"><span class="weight weight-a">B</span><h3>AI 创作工坊</h3></div>
+        <p><b>核心设定：</b>把脑子里的点子真的做出来——网页工具、小游戏、App、小程序、游戏角色、数字人。重点不是炫技，而是记录从想法到成品的全过程，包括翻车。每两周 1 期，可与 A 系列交替。</p>
+        <h4>拍之前问三个问题</h4>
+        <div class="guide-grid three">
+          <div class="mini-card"><b>有成品吗？</b><span>能看见、能玩、能打开，比纯讲概念好看 10 倍。</span></div>
+          <div class="mini-card"><b>有翻车吗？</b><span>一次成功的故事没人看，修 bug 的过程才有人看。</span></div>
+          <div class="mini-card"><b>孩子能讲明白吗？</b><span>如果讲不出来，这期就变成爸爸的个人秀了。</span></div>
+        </div>
+      </div>
+
+      <div class="series-card skill">
+        <div class="series-card-head"><span class="weight weight-a">C</span><h3>AI 技能课</h3></div>
+        <p><b>核心设定：</b>把 A 系列里「用 AI 出题」的部分拆出来，做 60 秒–5 分钟的知识课。A 系列负责记录故事，C 系列负责讲清原理。适合想在家用 AI 辅导孩子的家长，以及对 AI 好奇的小学生。</p>
+        <div class="table-wrap">
+          <table class="guide-table">
+            <thead><tr><th>A 系列（故事）</th><th>C 系列（知识）</th></tr></thead>
+            <tbody>
+              <tr><td>A09 什么是 SKILL</td><td>C01 3 分钟讲清楚 SKILL</td></tr>
+              <tr><td>A10 安装 SKILL 出题</td><td>C02 现场做一个出题 SKILL</td></tr>
+              <tr><td>A11–A13 做题、错题、升级</td><td>C03–C04 连载与实验</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="guide-note">一鱼多吃：同一批素材，A 版保留完整故事和反应，C 版只留概念和步骤，分别发不同平台。</p>
+      </div>
+
+      <div class="series-card sport">
+        <div class="series-card-head"><span class="weight weight-a">D</span><h3>运动日常</h3></div>
+        <p><b>核心设定：</b>不讲课、不做工具，就拍父子运动的真实反差。爸爸是「理论王者、实战青铜」，孩子是「嘴强王者、偶尔真强」。</p>
+        <p><b>风格：</b>30–45 秒为主，第一人称口述 + 字幕吐槽 + 反差 BGM，适合日更/周更。</p>
+        <h4>运动系列拍摄提醒</h4>
+        <ol class="guide-list">
+          <li><b>安全第一：</b>引体向上用辅助带/矮杠，别逞强；跑步避开车辆；游泳必须有大人陪同。</li>
+          <li><b>先热身再拍，</b>别为了镜头拉伤。</li>
+          <li><b>真实优先：</b>做不动就做不动，比硬撑好看。</li>
+          <li><b>爸爸别抢戏：</b>爸爸的翻车是配角，孩子才是主角。</li>
+          <li><b>固定机位 + 手机足够，</b>不需要专业设备。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="guide-section" id="script">
+      <h2>写脚本</h2>
+      <p class="guide-lede">先定结构，再填内容。不要从「大家好，今天给大家分享」开始；前 3 秒必须有人、有冲突、有画面。</p>
+
+      <div class="guide-grid three">
+        <div class="mini-card"><b>已经有原片</b><span>用「旁白重剪」：先写旁白，再标 6–8 个片段。</span></div>
+        <div class="mini-card"><b>还没拍</b><span>用「分镜脚本」：先定机位和必拍素材。</span></div>
+        <div class="mini-card"><b>知识课</b><span>用「口播逐字稿」：按时间段写，一条只讲一个点。</span></div>
+      </div>
+
+      <details class="guide-details" open>
+        <summary>模板 1 · 旁白重剪（已有长录屏）</summary>
+        <div class="details-body">
+          <div class="template-card">
+            <div class="template-head">
+              <div><strong>旁白重剪模板</strong><span>60–90 秒，知识课可 120 秒</span></div>
+              <button class="copy-btn" type="button" data-copy-target="#tpl-vo">复制模板</button>
+            </div>
+            <div class="template-body" id="tpl-vo">
+              <h4>基础信息</h4>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <tbody>
+                    <tr><th>编号 / 标题</th><td></td></tr>
+                    <tr><th>原片路径</th><td></td></tr>
+                    <tr><th>原片时长 / 分辨率</th><td></td></tr>
+                    <tr><th>成片目标</th><td>60–90 秒（知识课可 120 秒）</td></tr>
+                    <tr><th>平台 / 画布</th><td>竖版 1080×1920</td></tr>
+                    <tr><th>一句话故事</th><td></td></tr>
+                    <tr><th>唯一知识点</th><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>旁白全文</h4>
+              <p class="guide-note">先写旁白，再剪画面。字数 260–450 字。</p>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <thead><tr><th>段落</th><th>时间</th><th>旁白</th><th>作用</th></tr></thead>
+                  <tbody>
+                    <tr><td>钩子</td><td>0–3s</td><td></td><td>反差 / 提问 / 翻车</td></tr>
+                    <tr><td>背景</td><td>3–10s</td><td></td><td>这是谁、要干什么</td></tr>
+                    <tr><td>过程 1</td><td>10–25s</td><td></td><td>第一个关键片段</td></tr>
+                    <tr><td>过程 2</td><td>25–40s</td><td></td><td>第二个关键片段</td></tr>
+                    <tr><td>过程 3</td><td>40–55s</td><td></td><td>第三个关键片段</td></tr>
+                    <tr><td>总结</td><td>55–70s</td><td></td><td>一个知识点 / 一句吐槽</td></tr>
+                    <tr><td>结尾</td><td>70–80s</td><td></td><td>具体问题</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>片段表</h4>
+              <p class="guide-note">时间码先写估算值，剪之前用播放器核对。每段 3–6 秒，全集 6–8 段。</p>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <thead><tr><th>#</th><th>原片时间码</th><th>时长</th><th>画面</th><th>对应旁白</th><th>作用</th><th>留原声</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td></td><td>0s</td><td></td><td></td><td>钩子</td><td>否</td></tr>
+                    <tr><td>2</td><td></td><td>0s</td><td></td><td></td><td>背景</td><td>否</td></tr>
+                    <tr><td>3</td><td></td><td>0s</td><td></td><td></td><td>对比/翻车</td><td>否</td></tr>
+                    <tr><td>4</td><td></td><td>0s</td><td></td><td></td><td>对比/翻车</td><td>否</td></tr>
+                    <tr><td>5</td><td></td><td>0s</td><td></td><td></td><td>结果</td><td>是</td></tr>
+                    <tr><td>6</td><td></td><td>0s</td><td></td><td></td><td>反应</td><td>否</td></tr>
+                    <tr><td>7</td><td></td><td>0s</td><td></td><td></td><td>结尾</td><td>否</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>原声、字幕、BGM</h4>
+              <ul class="guide-list">
+                <li><b>原声保留点：</b>最多 2 处，写明时间码和保留原因。</li>
+                <li><b>字幕关键词：</b>每 10 秒不超过 3 个，别把旁白全文堆在画面中间。</li>
+                <li><b>BGM：</b>开场、过程、翻车、结尾分别写清楚；人声出现时降到 15%–20%。</li>
+              </ul>
+              <h4>封面与竖版</h4>
+              <ul class="guide-list">
+                <li>主标题 6–8 字；副标题 6–10 字；画面和情绪各写一句。</li>
+                <li>录屏距顶部 300px，宽 1080；标题区、字幕区、反应/表情提前留位。</li>
+                <li>背景用模糊放大或纯色，避免黑边。</li>
+              </ul>
+              <h4>发布前质检</h4>
+              <ul class="check-list">
+                <li><label><input type="checkbox"> 前 3 秒有钩子</label></li>
+                <li><label><input type="checkbox"> 成片 45–120 秒</label></li>
+                <li><label><input type="checkbox"> 片段 6–8 段，每段 ≤ 6 秒</label></li>
+                <li><label><input type="checkbox"> 闭眼听旁白，故事完整</label></li>
+                <li><label><input type="checkbox"> 原声只留 1–2 处</label></li>
+                <li><label><input type="checkbox"> 一个知识点</label></li>
+                <li><label><input type="checkbox"> 结尾有具体问题</label></li>
+                <li><label><input type="checkbox"> 隐私已打码</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="guide-details">
+        <summary>模板 2 · 分镜脚本（还没拍）</summary>
+        <div class="details-body">
+          <div class="template-card">
+            <div class="template-head">
+              <div><strong>分镜脚本模板</strong><span>先定机位、必拍素材和结尾</span></div>
+              <button class="copy-btn" type="button" data-copy-target="#tpl-storyboard">复制模板</button>
+            </div>
+            <div class="template-body" id="tpl-storyboard">
+              <h4>基础信息</h4>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <tbody>
+                    <tr><th>编号 / 标题</th><td></td></tr>
+                    <tr><th>系列 / 期数</th><td></td></tr>
+                    <tr><th>目标时长</th><td></td></tr>
+                    <tr><th>发布平台</th><td></td></tr>
+                    <tr><th>一句话卖点</th><td></td></tr>
+                    <tr><th>核心知识点（只写一个）</th><td></td></tr>
+                    <tr><th>主要笑点 / 反差</th><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>标题备选（3 个）</h4>
+              <ol class="guide-list"><li></li><li></li><li></li></ol>
+              <h4>开头钩子（0–5 秒，3 选 1）</h4>
+              <ul class="guide-list"><li>A.</li><li>B.</li><li>C.</li></ul>
+              <p class="guide-note">要求：出现人、出现冲突、出现画面。不要从「大家好，今天我们来……」开始。</p>
+              <h4>分镜表</h4>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <thead><tr><th>镜号</th><th>时间</th><th>画面 / 机位</th><th>口播 / 字幕</th><th>音效 / BGM</th><th>备注</th></tr></thead>
+                  <tbody>
+                    <tr><td>1</td><td>0–5s</td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>2</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>3</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>4</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>5</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>6</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>7</td><td></td><td></td><td></td><td></td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>结尾</h4>
+              <ul class="guide-list">
+                <li>画面：</li>
+                <li>口播：</li>
+                <li>互动问题（具体、好回答）：</li>
+              </ul>
+              <h4>必拍素材清单</h4>
+              <ul class="check-list">
+                <li><label><input type="checkbox"> 开场反应（爸爸/孩子各一条）</label></li>
+                <li><label><input type="checkbox"> 过程录屏（提前 10 秒开录）</label></li>
+                <li><label><input type="checkbox"> 翻车瞬间</label></li>
+                <li><label><input type="checkbox"> 修复/成功瞬间</label></li>
+                <li><label><input type="checkbox"> 空镜（键盘、屏幕、背影）</label></li>
+                <li><label><input type="checkbox"> 结尾同框</label></li>
+              </ul>
+              <h4>剪辑提示</h4>
+              <ul class="guide-list">
+                <li>前 3 秒必须出现：成品画面 / 人物表情 / 冲突。</li>
+                <li>字幕只放关键词，别整段照搬。</li>
+                <li>翻车处加音效 + 定格 + 放大。</li>
+                <li>BGM 在人声出现时降到 20% 以下。</li>
+              </ul>
+              <h4>安全与隐私</h4>
+              <ul class="check-list">
+                <li><label><input type="checkbox"> 无门牌、学校名、车牌、快递单</label></li>
+                <li><label><input type="checkbox"> 无真实姓名、班级、定位</label></li>
+                <li><label><input type="checkbox"> 代码中的 token / 密钥 / 内网地址已打码</label></li>
+                <li><label><input type="checkbox"> 孩子状态 OK，不想拍就停</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="guide-details">
+        <summary>模板 3 · 口播逐字稿（知识课）</summary>
+        <div class="details-body">
+          <div class="template-card">
+            <div class="template-head">
+              <div><strong>口播逐字稿模板</strong><span>不用背全文，只记每段第一个词和最后一个词</span></div>
+              <button class="copy-btn" type="button" data-copy-target="#tpl-oral">复制模板</button>
+            </div>
+            <div class="template-body" id="tpl-oral">
+              <h4>基础信息</h4>
+              <ul class="guide-list">
+                <li>编号 / 标题：</li>
+                <li>目标时长：</li>
+                <li>语速：每分钟约 260–300 字（小学生可更慢）</li>
+                <li>人设：五年级 Jasper，第一人称，像跟同学聊天</li>
+              </ul>
+              <h4>逐字稿结构</h4>
+              <div class="table-wrap">
+                <table class="guide-table">
+                  <thead><tr><th>时间</th><th>段落</th><th>文案</th></tr></thead>
+                  <tbody>
+                    <tr><td>0–5s</td><td>钩子（停顿 0.5 秒再开口）</td><td></td></tr>
+                    <tr><td>5–20s</td><td>抛问题 / 给反差</td><td></td></tr>
+                    <tr><td>20–45s</td><td>过程 1</td><td></td></tr>
+                    <tr><td>45–65s</td><td>过程 2 / 翻车</td><td></td></tr>
+                    <tr><td>65–80s</td><td>一个知识点（最好 20 字以内）</td><td></td></tr>
+                    <tr><td>80–90s</td><td>结尾提问</td><td></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <h4>口播技巧</h4>
+              <ul class="guide-list">
+                <li><b>重音：</b>每句只重读一个词。</li>
+                <li><b>停顿：</b>翻车前停 0.5 秒，笑点后停 1 秒。</li>
+                <li><b>语气：</b>陈述句往下走，疑问句往上挑。</li>
+                <li><b>动作：</b>说到「看我的」时必须有动作，别只动嘴。</li>
+                <li><b>NG 处理：</b>说错了停 2 秒，从这一句重说，后期好剪。</li>
+              </ul>
+              <h4>口播自检</h4>
+              <ul class="check-list">
+                <li><label><input type="checkbox"> 没有书面语</label></li>
+                <li><label><input type="checkbox"> 没有超过 20 字的长句</label></li>
+                <li><label><input type="checkbox"> 有一个明确的互动问题</label></li>
+                <li><label><input type="checkbox"> 读一遍，喘不上气的地方已改</label></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="guide-details">
+        <summary>完整案例 · A01 闯关小游戏介绍（旁白重剪）</summary>
+        <div class="details-body">
+          <div class="case-meta">
+            <span class="meta-item">原片 5:45</span>
+            <span class="meta-item">成片 70–80s</span>
+            <span class="meta-item">保留率 22%</span>
+            <span class="meta-item">1080×1920</span>
+          </div>
+          <p class="guide-note">时间码是根据抽帧估算的，剪之前用播放器核对一遍。原片前约 1:20 是登录、建项目、加载，全部剪掉。</p>
+
+          <h4>一句话故事</h4>
+          <p>我爸说给我做了个游戏，结果他把数学题藏进了关卡。唯一知识点：游戏化学习——把题目包进关卡，有即时反馈和失败成本。主要笑点：「游戏 7 分，我爸的心机 10 分」。</p>
+
+          <h4>旁白全文（约 170 字，40–45 秒）</h4>
+          <blockquote class="guide-quote">
+            <p>我爸说给我做了个游戏。我打开一看——第一关，小数乘法。</p>
+            <p>这是我爸，30 多岁的老程序员。上周他说要给我做个游戏，我以为是那种打怪升级的。</p>
+            <p>结果他把数学题藏进了关卡里。我怀疑他就是换了个方式让我做题。</p>
+            <p>但不得不承认，比卷子好玩。第一关小数乘法，第二关考位置，第三关又是小数乘法。</p>
+            <p>我一路打到挑战成功。游戏 7 分，我爸的心机 10 分。</p>
+            <p>你们说，下一关让他加语文还是英语？</p>
+          </blockquote>
+
+          <h4>片段表</h4>
+          <div class="table-wrap">
+            <table class="guide-table">
+              <thead><tr><th>#</th><th>原片约</th><th>时长</th><th>画面</th><th>对应旁白</th><th>作用</th><th>留原声</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>01:25–01:32</td><td>6s</td><td>第 1 关开场，角色和 HP 条出现</td><td>「我爸说给我做了个游戏」</td><td>钩子</td><td>否</td></tr>
+                <tr><td>2</td><td>00:40–00:48</td><td>5s</td><td>关卡列表，能看到 3 个关卡</td><td>「我以为是那种打怪升级的」</td><td>背景</td><td>否</td></tr>
+                <tr><td>3</td><td>02:05–02:12</td><td>5s</td><td>第 1 关答题（0.8×4）</td><td>「第一关，小数乘法」</td><td>证据</td><td>否</td></tr>
+                <tr><td>4</td><td>03:14–03:21</td><td>5s</td><td>第 2 关「位置」地图</td><td>「第二关考位置」</td><td>对比</td><td>否</td></tr>
+                <tr><td>5</td><td>04:19–04:26</td><td>5s</td><td>第 3 关小数乘法答题</td><td>「第三关又是小数乘法」</td><td>证据</td><td>否</td></tr>
+                <tr><td>6</td><td>05:02–05:10</td><td>6s</td><td>「挑战成功」结算页</td><td>「我一路打到挑战成功」</td><td>结果</td><td><b>是</b>（通关音效）</td></tr>
+                <tr><td>7</td><td>05:35–05:43</td><td>5s</td><td>回到项目/关卡列表</td><td>「下一关加语文还是英语」</td><td>结尾</td><td>否</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4>声音与字幕</h4>
+          <ul class="guide-list">
+            <li><b>原声保留：</b>05:02 通关音效保留 2 秒；如果答题时有真实吐槽，保留 2–3 秒放在片段 3。</li>
+            <li><b>字幕关键词：</b>小数乘法 / 位置 / 第三关 / 挑战成功 / 心机 10 分。</li>
+            <li><b>BGM：</b>开场轻快带悬疑；过程音量 15%–20%；通关音乐上扬 + 原片音效；结尾留白 1 秒。</li>
+          </ul>
+
+          <h4>竖版排版与封面</h4>
+          <ul class="guide-list">
+            <li>录屏宽 1080，3:2 原片高约 720，放画面中部偏上；背景用模糊放大版。</li>
+            <li>顶部 200px 放「我爸做的游戏」大字；录屏下方 300px 放旁白字幕；关键词一次只出一个。</li>
+            <li>封面主标题「我爸把数学题做成了游戏」，副标题「我打到通关才发现」，画面用第 1 关 + 爸爸得意脸。</li>
+          </ul>
+
+          <h4>剪辑步骤</h4>
+          <ol class="guide-list">
+            <li>先粗剪 7 段，每段 4–6 秒。</li>
+            <li>录旁白，按句子对齐画面。</li>
+            <li>原声只留通关音效和 1 处吐槽。</li>
+            <li>加字幕和关键词。</li>
+            <li>BGM 降到 20%。</li>
+            <li>做封面，导出 1080p。</li>
+          </ol>
+
+          <h4>发布文案</h4>
+          <p><b>标题：</b>我爸说给我做了个游戏，结果第一关是小数乘法</p>
+          <p><b>简介：</b>五年级小学生的游戏测评。游戏 7 分，我爸的心机 10 分。你们下一关想让他加语文还是英语？</p>
+
+          <h4>质检</h4>
+          <ul class="check-list">
+            <li><label><input type="checkbox"> 前 3 秒出现游戏画面 +「小数乘法」</label></li>
+            <li><label><input type="checkbox"> 全片 70–80 秒</label></li>
+            <li><label><input type="checkbox"> 7 段，每段 ≤ 6 秒</label></li>
+            <li><label><input type="checkbox"> 旁白能独立听懂</label></li>
+            <li><label><input type="checkbox"> 只讲「游戏化学习」一个点</label></li>
+            <li><label><input type="checkbox"> 结尾问题具体</label></li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="guide-section" id="shoot">
+      <h2>拍摄</h2>
+      <p class="guide-lede">每次开拍前 10 分钟过一遍，拍完再对照必拍素材检查。手机足够，真实反应比画面精致更重要。</p>
+
+      <h3>开拍前 10 分钟</h3>
+      <ul class="check-list two-col">
+        <li><label><input type="checkbox"> 手机电量 &gt; 50%，存储 &gt; 10GB</label></li>
+        <li><label><input type="checkbox"> 开勿扰模式，关微信/QQ/系统通知</label></li>
+        <li><label><input type="checkbox"> 擦镜头</label></li>
+        <li><label><input type="checkbox"> 麦克风试录 10 秒，回放听杂音</label></li>
+        <li><label><input type="checkbox"> 背景收拾：不露门牌、学校名、快递单</label></li>
+        <li><label><input type="checkbox"> 孩子先玩 5 分钟，进入状态再开机</label></li>
+        <li><label><input type="checkbox"> 脚本只记 3 个关键点，不背全文</label></li>
+        <li><label><input type="checkbox"> 约定「再来一次」的暗号</label></li>
+        <li><label><input type="checkbox"> 录屏软件就位（系统录屏 / OBS）</label></li>
+        <li><label><input type="checkbox"> 拍完立即导出，别等手机满</label></li>
+      </ul>
+
+      <h3>机位</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>机位</th><th>用途</th><th>设备</th><th>设置</th></tr></thead>
+          <tbody>
+            <tr><td>A 机</td><td>父子同框、全景</td><td>手机 + 三脚架</td><td>竖屏 9:16，固定不动</td></tr>
+            <tr><td>B 机</td><td>表情、手部特写</td><td>手机手持</td><td>跟随，别抖</td></tr>
+            <tr><td>C 机</td><td>游戏/代码录屏</td><td>电脑</td><td>1080p 60fps</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-note">主发竖版；B 站/公众号需要横版，拍摄时用横屏多留一份。特写比全景值钱：表情、手、屏幕，各拍 3 条。</p>
+
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h3>收音</h3>
+          <ul class="guide-list">
+            <li>领夹麦最优；没有就让手机离人 50cm 以内。</li>
+            <li>录屏时系统声音和麦克风分开录，后期好调。</li>
+            <li>关空调、风扇，避开冰箱和洗衣机。</li>
+            <li>说话前先录 3 秒环境音，方便降噪。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h3>光线</h3>
+          <ul class="guide-list">
+            <li>白天面向窗户，不要背光。</li>
+            <li>晚上用一盏台灯补脸，别用顶灯直打。</li>
+            <li>屏幕反光就调角度，别让脸黑成剪影。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>录屏</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 关通知、关弹窗、隐藏书签栏</label></li>
+        <li><label><input type="checkbox"> 浏览器/编辑器字体放大到 125%</label></li>
+        <li><label><input type="checkbox"> 代码里的 token、密钥、内网地址提前打码</label></li>
+        <li><label><input type="checkbox"> 录前说「3、2、1 开始」，方便对齐音画</label></li>
+        <li><label><input type="checkbox"> 提前 10 秒开录，翻车往往在准备阶段</label></li>
+      </ul>
+
+      <h3>拍摄中的五条铁律</h3>
+      <ol class="guide-list">
+        <li><b>先拍反应，再补过程</b>——真实表情只有一次。</li>
+        <li><b>每条素材多录 3 秒</b>——留剪辑余量。</li>
+        <li><b>一次只讲一个知识点</b>——贪多必剪。</li>
+        <li><b>翻车比成功好看</b>——别急着删失败素材。</li>
+        <li><b>孩子不想拍就停</b>——不演、不逼、不拿哭脸当素材。</li>
+      </ol>
+
+      <h3>隐私与安全</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 不拍门牌、学校名、车牌、快递单</label></li>
+        <li><label><input type="checkbox"> 不暴露真实姓名、班级、定位</label></li>
+        <li><label><input type="checkbox"> 代码中的密钥、token、内网地址已打码</label></li>
+        <li><label><input type="checkbox"> 聊天记录去掉头像、昵称、手机号</label></li>
+        <li><label><input type="checkbox"> 使用他人肖像（含 AI 数字人）已获授权</label></li>
+        <li><label><input type="checkbox"> 发布前给家人过一遍</label></li>
+      </ul>
+
+      <h3>收工检查</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 当天素材已导出并备份（手机 + 电脑）</label></li>
+        <li><label><input type="checkbox"> 录屏、花絮、封面素材分文件夹放好</label></li>
+        <li><label><input type="checkbox"> 回系列库把该集标到「素材就绪」</label></li>
+        <li><label><input type="checkbox"> 记一句「今天最好笑的瞬间」，写进复盘</label></li>
+      </ul>
+    </section>
+
+    <section class="guide-section" id="edit">
+      <h2>旁白剪辑法</h2>
+      <p class="guide-lede">把 5–17 分钟的原片，剪成 45–120 秒的故事。原片只当素材库，成片重新讲故事。</p>
+
+      <div class="callout callout-warn">
+        <strong>为什么不能直接发原片</strong>
+        <ul>
+          <li>观众想看的是故事和反应，不是完整操作过程。</li>
+          <li>长录屏里有大量登录、加载、停顿、重复操作。</li>
+          <li>没有旁白，观众不知道重点在哪；完播率一掉，平台就不再推荐。</li>
+        </ul>
+      </div>
+
+      <h3>三层声音结构</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>层</th><th>占比</th><th>作用</th><th>处理</th></tr></thead>
+          <tbody>
+            <tr><td>旁白（VO）</td><td>约 70%</td><td>讲故事、吐槽、给结论</td><td>单独录，后期铺在下面</td></tr>
+            <tr><td>原片原声</td><td>约 10%</td><td>真实反应、笑声、提示音</td><td>只留 1–2 处，其余静音</td></tr>
+            <tr><td>BGM</td><td>约 20%</td><td>控制情绪</td><td>人声出现时降到 15%–20%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-note">判断标准：关掉画面只听声音，也能听懂发生了什么。</p>
+
+      <h3>成片结构公式</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>时间</th><th>内容</th><th>画面</th></tr></thead>
+          <tbody>
+            <tr><td>0–3s</td><td>钩子：反差 / 提问 / 翻车</td><td>最强的一帧，不要片头</td></tr>
+            <tr><td>3–10s</td><td>背景：这是谁、要干什么</td><td>1 个建立镜头</td></tr>
+            <tr><td>10–50s</td><td>3 个关键片段</td><td>片段 + 旁白交替</td></tr>
+            <tr><td>50–70s</td><td>一个知识点 / 一句总结</td><td>图示、字幕卡</td></tr>
+            <tr><td>70–90s</td><td>结尾提问</td><td>反应镜头或父子同框</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-note">知识课可以延长到 2–3 分钟，但结构不变。</p>
+
+      <h3>片段怎么选</h3>
+      <div class="guide-grid four">
+        <div class="mini-card"><b>前后对比</b><span>让变化可见：改设置前 vs 改设置后。</span></div>
+        <div class="mini-card"><b>翻车</b><span>制造情绪：点错按钮、答错、卡关。</span></div>
+        <div class="mini-card"><b>反应</b><span>让人物立住：爸爸得意、沉默、假装喝水。</span></div>
+        <div class="mini-card"><b>结果</b><span>给闭环：通关、生成成功、作品展示。</span></div>
+      </div>
+      <ul class="guide-list">
+        <li>每段 <b>3–6 秒</b>，超过 6 秒必须加速或拆开。</li>
+        <li>全集 <b>6–8 段</b>，不要超过 10 段。</li>
+        <li>不按原片时间顺序铺，按旁白需要排。</li>
+        <li>每段都要能回答「为什么放它」。</li>
+      </ul>
+      <p class="guide-note">原片粗筛：1.5 倍速看一遍 → 只记 8–10 个时间点，每个写一句「这里发生了什么」→ 标完再剪，不要一边看一边剪。</p>
+
+      <h3>旁白怎么写</h3>
+      <div class="guide-grid three">
+        <div class="mini-card"><b>闭眼测试</b><span>只听旁白，故事完整。</span></div>
+        <div class="mini-card"><b>说人话</b><span>用「我以为 / 结果 / 好家伙」，不用「首先 / 其次」。</span></div>
+        <div class="mini-card"><b>不念操作</b><span>不要说「现在点击按钮」，要说「我以为很简单，结果……」。</span></div>
+      </div>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>成片时长</th><th>旁白字数（小学生 260–300 字/分钟）</th></tr></thead>
+          <tbody>
+            <tr><td>60 秒</td><td>约 260–300 字</td></tr>
+            <tr><td>75 秒</td><td>约 320–370 字</td></tr>
+            <tr><td>90 秒</td><td>约 390–450 字</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="guide-note">先写旁白，再定成片时长；不要先剪画面再硬配旁白。</p>
+
+      <h4>句式模板</h4>
+      <div class="quote-chips">
+        <span>我以为……结果……</span>
+        <span>我爸说……我信了……</span>
+        <span>好家伙，……</span>
+        <span>你们猜怎么着？</span>
+        <span>这里有个细节：……</span>
+        <span>翻译一下：……</span>
+      </div>
+
+      <h3>旁白怎么录</h3>
+      <ul class="guide-list">
+        <li>手机自带录音机即可，安静房间，离嘴 10–15 厘米。</li>
+        <li>站着录，笑着录，声音会比坐着自然。</li>
+        <li>每句录 2 遍，选更口语的那遍。</li>
+        <li>句与句之间停 0.5 秒，方便后期对齐。</li>
+        <li>说错了停 2 秒，从这一句重说，不要整段重来。</li>
+        <li>录完先听一遍：有没有喘气声、口水音、空调声。</li>
+      </ul>
+
+      <h3>横屏录屏怎么放竖版</h3>
+      <p>原片是 1620×1080（3:2）或 2160×1080（2:1），直接裁成 9:16 会丢内容。推荐画布 1080×1920：</p>
+      <pre class="guide-code">┌──────────────────┐
+│   标题大字 120px   │
+│ ┌──────────────┐ │
+│ │  录屏 1080×720 │ │
+│ └──────────────┘ │
+│                  │
+│   旁白字幕        │
+│   关键词 / 表情包   │
+│                  │
+└──────────────────┘</pre>
+      <ul class="guide-list">
+        <li>录屏按宽度铺满，3:2 原片高约 720，2:1 原片高约 540。</li>
+        <li>上方放标题或本集问题，下方放字幕和反应。</li>
+        <li>背景用同一画面的模糊放大版，避免黑边。</li>
+        <li>录屏里的字太小：整体放大 110%–120%，或局部放大答题区。</li>
+        <li>有摄像头小窗的素材（如 A08），裁成圆形反应气泡放右下角。</li>
+      </ul>
+
+      <h3>剪辑步骤（剪映）</h3>
+      <ol class="guide-list">
+        <li><b>粗筛：</b>标 8–10 个时间点。</li>
+        <li><b>录旁白：</b>先定总时长。</li>
+        <li><b>铺画面：</b>一句旁白对 1–2 段画面。</li>
+        <li><b>修片段：</b>每段压到 3–6 秒。</li>
+        <li><b>留原声：</b>只留 1–2 处反应或提示音。</li>
+        <li><b>加字幕：</b>底部放旁白全文，画面中间只放关键词。</li>
+        <li><b>配 BGM：</b>人声出现时降到 15%–20%。</li>
+        <li><b>做封面：</b>6–8 个大字，先做封面再导出。</li>
+        <li><b>导出：</b>1080p，30fps，竖版。</li>
+      </ol>
+
+      <h3>常见错误</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>错误</th><th>后果</th><th>改法</th></tr></thead>
+          <tbody>
+            <tr><td>从登录界面开始放</td><td>前 3 秒流失</td><td>直接从游戏画面开始</td></tr>
+            <tr><td>一段素材放 15 秒</td><td>完播率崩</td><td>压到 6 秒内</td></tr>
+            <tr><td>旁白念操作步骤</td><td>像说明书</td><td>只讲感受、反差、结论</td></tr>
+            <tr><td>原声太多</td><td>听不清旁白</td><td>只留 1–2 处</td></tr>
+            <tr><td>一条讲三个知识点</td><td>观众记不住</td><td>只留一个</td></tr>
+            <tr><td>横屏硬裁竖版</td><td>字被切掉</td><td>上下留白 + 模糊背景</td></tr>
+            <tr><td>先剪画面再配旁白</td><td>节奏被画面绑架</td><td>先录旁白</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>发布前质检</h3>
+      <ul class="check-list two-col">
+        <li><label><input type="checkbox"> 前 3 秒有钩子，没有片头动画</label></li>
+        <li><label><input type="checkbox"> 成片 45–120 秒</label></li>
+        <li><label><input type="checkbox"> 片段 6–8 段，每段 ≤ 6 秒</label></li>
+        <li><label><input type="checkbox"> 闭眼听旁白，故事完整</label></li>
+        <li><label><input type="checkbox"> 原声只留 1–2 处</label></li>
+        <li><label><input type="checkbox"> 一个知识点</label></li>
+        <li><label><input type="checkbox"> 结尾有具体问题</label></li>
+        <li><label><input type="checkbox"> 字幕手机上能看清</label></li>
+        <li><label><input type="checkbox"> 隐私已打码</label></li>
+      </ul>
+    </section>
+
+    <section class="guide-section" id="publish">
+      <h2>发布</h2>
+      <p class="guide-lede">先定平台再定时长，别剪完才发现投不了。多平台错开 1–2 小时，避免自己跟自己抢流量。</p>
+
+      <h3>平台矩阵</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>平台</th><th>主版本</th><th>建议时长</th><th>封面</th><th>标题</th><th>适合内容</th></tr></thead>
+          <tbody>
+            <tr><td>视频号</td><td>竖版 9:16</td><td>60–90s</td><td>3:4</td><td>≤ 15 字</td><td>亲子、家长转发</td></tr>
+            <tr><td>抖音</td><td>竖版 9:16</td><td>45–90s</td><td>9:16</td><td>≤ 20 字</td><td>冲突、反差、翻车</td></tr>
+            <tr><td>小红书</td><td>竖版 9:16 或图文</td><td>30–60s</td><td>3:4</td><td>≤ 20 字</td><td>清单体、方法、测评</td></tr>
+            <tr><td>B 站</td><td>横版 16:9</td><td>3–8min</td><td>16:9</td><td>≤ 25 字</td><td>完整教程、长记录</td></tr>
+            <tr><td>公众号</td><td>图文 + 嵌入视频</td><td>—</td><td>2.35:1</td><td>≤ 25 字</td><td>方法总结、系列合集</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-green">
+        <strong>B02 · 一鱼两吃</strong>
+        <p>同一件事，剪成 60 秒竖版 + 5 分钟横版。竖版：钩子 + 一个笑点 + 一个知识点；横版：完整教程 + 失败复盘。先定平台再定时长。</p>
+      </div>
+
+      <h3>发布前检查</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 标题含反差 / 数字 / 身份 / 翻车，至少一个</label></li>
+        <li><label><input type="checkbox"> 前 3 秒有钩子，没有片头动画</label></li>
+        <li><label><input type="checkbox"> 字幕无错别字，人名、术语正确</label></li>
+        <li><label><input type="checkbox"> 音量统一，BGM 不盖人声</label></li>
+        <li><label><input type="checkbox"> 封面大字 6–8 个，手机缩略图能看清</label></li>
+        <li><label><input type="checkbox"> 话题标签 3–5 个</label></li>
+        <li><label><input type="checkbox"> 评论区置顶一个问题</label></li>
+        <li><label><input type="checkbox"> 隐私检查已过</label></li>
+        <li><label><input type="checkbox"> 成片、封面、文案已归档</label></li>
+        <li><label><input type="checkbox"> 回系列库把该集标到「已发布」</label></li>
+      </ul>
+
+      <h3>各平台补充</h3>
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h4>视频号</h4>
+          <ul class="guide-list">
+            <li>简介 1–2 行，语气稳，适合家长看。</li>
+            <li>发布后转发到家庭群/朋友圈，配一句「孩子自己剪的」。</li>
+            <li>关注「朋友点赞」带来的二次推荐。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h4>抖音</h4>
+          <ul class="guide-list">
+            <li>前 3 秒必须出现人物或冲突。</li>
+            <li>标题口语化，别用书面标题。</li>
+            <li>发布后 1 小时内回复前 10 条评论。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h4>小红书</h4>
+          <ul class="guide-list">
+            <li>封面决定点击率，先做封面再剪视频。</li>
+            <li>正文用清单体，多换行，每行一句话。</li>
+            <li>首图放大字，第二张放过程/对比图。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h4>B 站</h4>
+          <ul class="guide-list">
+            <li>标题可以玩梗，简介加时间轴。</li>
+            <li>横版画面左右留安全区。</li>
+            <li>适合放完整教程和失败复盘。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h4>公众号</h4>
+          <ul class="guide-list">
+            <li>标题 ≤ 25 字，摘要 ≤ 54 字。</li>
+            <li>封面准备 2.35:1 和 1:1 两个尺寸。</li>
+            <li>正文每 300 字一个小标题；文末放视频号名片和下期预告。</li>
+          </ul>
+        </div>
+      </div>
+
+      <details class="guide-details">
+        <summary>App / 小程序上架（拍 B04 / B05 时用）</summary>
+        <div class="details-body">
+          <div class="guide-grid two">
+            <div class="guide-card">
+              <h4>iOS App Store</h4>
+              <ul class="guide-list">
+                <li>准备 Apple Developer 账号（年费制）。</li>
+                <li>隐私政策页面、儿童类隐私说明。</li>
+                <li>截图尺寸、应用图标、启动页。</li>
+                <li>先用 TestFlight 内测，再提交审核。</li>
+                <li>预留被拒和修改时间，别承诺「一定上架」。</li>
+              </ul>
+            </div>
+            <div class="guide-card">
+              <h4>微信小程序</h4>
+              <ul class="guide-list">
+                <li>选择合适的主体和类目，个人主体部分类目受限。</li>
+                <li>隐私协议、用户信息收集说明。</li>
+                <li>提交前用体验版完整走一遍。</li>
+                <li>审核意见逐条修改，保留截图当素材。</li>
+                <li>规则会变，以平台最新要求为准。</li>
+              </ul>
+            </div>
+          </div>
+          <p class="guide-note">拍摄点：被拒邮件、修改记录、重新提交、审核通过那一刻，比「成功」本身更有内容。</p>
+        </div>
+      </details>
+
+      <h3>发布时间</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>时段</th><th>适合</th></tr></thead>
+          <tbody>
+            <tr><td>工作日 18:00–21:00</td><td>家长下班后、孩子写完作业</td></tr>
+            <tr><td>周末 10:00–12:00</td><td>亲子内容、教程</td></tr>
+            <tr><td>周末 20:00–22:00</td><td>轻松日常、运动</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>发布后 1 小时</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 回复前 10 条评论</label></li>
+        <li><label><input type="checkbox"> 记录播放、完播、点赞、评论</label></li>
+        <li><label><input type="checkbox"> 把高频问题记进复盘</label></li>
+        <li><label><input type="checkbox"> 数据异常（限流/审核中）先截图再处理</label></li>
+      </ul>
+    </section>
+
+    <section class="guide-section" id="retro">
+      <h2>复盘</h2>
+      <p class="guide-lede">发布 24 小时后填，5 分钟写完，别写小作文。结论要能变成下一期的动作。</p>
+
+      <h3>基础信息</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <tbody>
+            <tr><th>编号 / 标题</th><td></td></tr>
+            <tr><th>发布日期</th><td></td></tr>
+            <tr><th>平台 / 时长</th><td></td></tr>
+            <tr><th>选题来源</th><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>数据</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>指标</th><th>视频号</th><th>抖音</th><th>小红书</th><th>B 站</th></tr></thead>
+          <tbody>
+            <tr><td>播放</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>完播率</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>点赞</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>评论</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>转发</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>涨粉</td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>三个问题</h3>
+      <div class="guide-grid three">
+        <div class="guide-card">
+          <h4>1. 前 3 秒行不行？</h4>
+          <p>3 秒留存：</p>
+          <p>如果重来，第一句改成：</p>
+        </div>
+        <div class="guide-card">
+          <h4>2. 完播掉在哪？</h4>
+          <p>掉点位置：</p>
+          <p>原因猜测：</p>
+          <p>下次怎么改：</p>
+        </div>
+        <div class="guide-card">
+          <h4>3. 评论在问什么？</h4>
+          <p>高频问题 1：</p>
+          <p>高频问题 2：</p>
+          <p>能不能变成下一期：</p>
+        </div>
+      </div>
+
+      <h3>保留 / 删除 / 下次改</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>类型</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>保留（有效）</td><td></td></tr>
+            <tr><td>删除（无效）</td><td></td></tr>
+            <tr><td>下次改（具体动作）</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>可复用素材</h3>
+      <ul class="guide-list">
+        <li>最好笑的瞬间（时间点）：</li>
+        <li>可以剪成二创的片段：</li>
+        <li>可以写进公众号的点：</li>
+      </ul>
+
+      <div class="callout">
+        <strong>一句话结论</strong>
+        <p>这期最大的收获是：__________。</p>
+        <p>下一期立刻要改的是：__________。</p>
+      </div>
+
+      <h3>回填</h3>
+      <ul class="check-list">
+        <li><label><input type="checkbox"> 把结论写进系列库该集备注</label></li>
+        <li><label><input type="checkbox"> 系列库该集勾到「已发布」，复盘结论写进备注</label></li>
+        <li><label><input type="checkbox"> 发现新选题，加到对应系列 data.js</label></li>
+      </ul>
+    </section>
+
+    <section class="guide-section" id="titles">
+      <h2>标题与金句</h2>
+      <p class="guide-lede">先挑标题类型，再套内容。标题里至少有一个：反差、数字、身份、翻车。</p>
+
+      <h3>标题公式</h3>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <thead><tr><th>公式</th><th>示例</th></tr></thead>
+          <tbody>
+            <tr><td>我爸说 X，结果 Y</td><td>我爸说给我做了个游戏，结果他自己过不了第一关</td></tr>
+            <tr><td>花了 X，我 X 就……</td><td>我爸花 8 小时做的功能，我 8 秒就玩坏了</td></tr>
+            <tr><td>五年级小学生测评……</td><td>五年级小学生测评老爸写的游戏，能玩吗？</td></tr>
+            <tr><td>别人家爸爸 vs 我爸</td><td>别人家爸爸辅导作业，我爸给我写外挂</td></tr>
+            <tr><td>我们真的……然后……</td><td>我们真的把游戏上架了 App Store，然后被拒了 2 次</td></tr>
+            <tr><td>让 AI……它居然……</td><td>让 AI 给我出题，它居然把答案写错了</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>现成标题</h3>
+      <div class="guide-grid three">
+        <div class="guide-card">
+          <h4>亲子闯关</h4>
+          <ol class="title-list">
+            <li>我爸说给我做了个游戏，结果他自己过不了第一关</li>
+            <li>五年级小学生测评老爸写的游戏，能玩吗？</li>
+            <li>我爸花 8 小时做的功能，我 8 秒就玩坏了</li>
+            <li>让 AI 给我出题，它居然把答案写错了</li>
+            <li>我爸教我写代码，我教他怎么做个人</li>
+            <li>别人家爸爸辅导作业，我爸给我写外挂</li>
+            <li>我把爸爸做成了游戏里的最终 boss</li>
+            <li>用 AI 复习英语，我妈以为我在玩游戏</li>
+            <li>我的错题本会说话，还说得挺准</li>
+            <li>我爸让我自己做个游戏，然后他忍不住了 3 次</li>
+          </ol>
+        </div>
+        <div class="guide-card">
+          <h4>AI 创作与上架</h4>
+          <ol class="title-list" start="11">
+            <li>这个网页小工具，我爸写了 2 小时，我用了 2 分钟</li>
+            <li>我们把小游戏上架了 App Store，然后被拒了 2 次</li>
+            <li>微信小程序审核：我爸改标题改到怀疑人生</li>
+            <li>我给 AI 描述了一只精灵，它画出了我家猫</li>
+            <li>数字人讲题，差点把我讲睡着</li>
+            <li>30 秒看懂冒泡排序，我爸用袜子演示的</li>
+            <li>我家的身高折线图，暴露了我弟长得比我快</li>
+            <li>父子聊天记录曝光：我爸的「在吗」后面从来没好事</li>
+          </ol>
+        </div>
+        <div class="guide-card">
+          <h4>运动日常</h4>
+          <ol class="title-list" start="19">
+            <li>程序员爸爸的引体向上，和我理解的完全不一样</li>
+            <li>我爸说这是「最短行程」，我看是「最短努力」</li>
+          </ol>
+        </div>
+      </div>
+
+      <h3>金句库</h3>
+      <ul class="quote-list">
+        <li>别人家爸爸教孩子写代码，我爸让我给他 debug。</li>
+        <li>我爸的代码能跑，但只能跑一次。</li>
+        <li>AI 不会累，我爸会，所以我爸更需要 SKILL。</li>
+        <li>学习不是我逼你，是关卡不让你走。</li>
+        <li>我爸说运动要循序渐进，然后他做了 0.5 个引体向上。</li>
+        <li>这不是 bug，这是我爸留给我的作业。</li>
+        <li>我负责玩，我爸负责修，AI 负责背锅。</li>
+        <li>我爸的嘴，比他写的代码还硬。</li>
+        <li>别人家的游戏要充值，我家的游戏要修 bug。</li>
+        <li>五年级的我，已经要给我爸做代码审查了。</li>
+      </ul>
+
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h4>开头句式（前 3 秒）</h4>
+          <ol class="guide-list">
+            <li>「这是我爸，30 多岁的老程序员。今天他非要……」</li>
+            <li>「我只有一个问题：……」</li>
+            <li>「别人家……，我爸……」</li>
+            <li>「事情是这样的。」</li>
+            <li>「先说结论：……」（适合教程类）</li>
+          </ol>
+        </div>
+        <div class="guide-card">
+          <h4>结尾句式（引导评论）</h4>
+          <ol class="guide-list">
+            <li>「你们想看我再加什么？点赞最高的下期就做。」</li>
+            <li>「这波操作你打几分？评论区告诉我。」</li>
+            <li>「下一关挑战什么，你们点菜。」</li>
+            <li>「我爸说他不服，你们觉得呢？」</li>
+            <li>「猜猜结果，最接近的置顶。」</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>不要这样写</strong>
+        <ul>
+          <li>「大家好，我是……今天给大家分享……」</li>
+          <li>「综上所述」「由此可见」「值得一提的是」</li>
+          <li>标题超过 25 字，手机上显示不全</li>
+          <li>只夸不损，没有冲突</li>
+          <li>把「AI 很强大」当结论，没有具体例子</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="guide-section" id="library">
+      <h2>系列库用法</h2>
+      <p class="guide-lede">系列库是日常入口：直接双击 <code>index.html</code>，不需要装环境，不需要起服务。推荐 Chrome 或 Edge。</p>
+
+      <div class="guide-grid two">
+        <div class="guide-card">
+          <h3>目录与清单</h3>
+          <ul class="guide-list">
+            <li>点大系列展开 / 收起，点子系列看右侧选题。</li>
+            <li>数字 <b>0/4</b> 是「已发布 / 总集数」；<span class="inline-dot full"></span> 绿点表示素材已拍齐，<span class="inline-dot part"></span> 黄点表示拍了一部分，空心表示还没拍。</li>
+            <li>五步清单：选题确认 → 素材就绪 → 旁白录音 → 剪辑完成 → 已发布。勾选会自动补齐前序步骤。</li>
+            <li>大系列、子系列、单集都能改权重：S 主推、A 重点、B 常规、C 备用。</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <h3>搜索与备份</h3>
+          <ul class="guide-list">
+            <li>搜标题、文案、标签、原片文件名都能找到。</li>
+            <li>勾选、权重、备注自动保存在本机浏览器。</li>
+            <li>换设备或清理缓存前，先点「导出备份」下载 JSON。</li>
+            <li>「导入备份」会整体覆盖；「重置」会清空所有标记。</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>怎么加一个新系列</h3>
+      <ol class="guide-list">
+        <li>在项目根目录新建文件夹，例如 <code>手工日常/</code>。</li>
+        <li>复制任意 <code>data.js</code>，改 <code>id</code>、<code>name</code>、<code>color</code>、<code>subSeries</code>。</li>
+        <li>在 <code>index.html</code> 的 <code>app.js</code> 前加一行 <code>&lt;script src="手工日常/data.js"&gt;&lt;/script&gt;</code>。</li>
+        <li>刷新页面，目录自动出现。</li>
+      </ol>
+
+      <details class="guide-details">
+        <summary>单集数据最少需要哪些字段</summary>
+        <div class="details-body">
+          <pre class="guide-code">{
+  id: 'E01',                 // 全局唯一
+  code: 'E01',
+  title: '这一集的标题',
+  altTitles: ['备选标题'],
+  hook: '前 3 秒的钩子',
+  copy: '小学生第一人称口播',
+  shooting: ['拍摄建议 1', '拍摄建议 2'],
+  weight: 'B',
+  duration: '60s',
+  source: '',                // 原片文件名，没有就留空
+  tags: ['待拍'],
+  defaultChecklist: [true, false, false, false, false]
+}</pre>
+          <p class="guide-note">defaultChecklist 只在这个单集第一次打开时生效，不会覆盖已经改过的状态。</p>
+        </div>
+      </details>
+
+      <div class="callout callout-warn">
+        <strong>注意</strong>
+        <ul>
+          <li>页面不联网，所有内容都在本地。</li>
+          <li>备注和勾选存在 localStorage，不同浏览器不互通。</li>
+          <li>导入备份会整体覆盖，不会合并。</li>
+          <li>打印 / 存 PDF 时，系列库的卡片会自动展开（Ctrl+P）。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="guide-toast" role="status" aria-live="polite"></div>
+
+<script src="guide.js"></script>
+</body>
+</html>
